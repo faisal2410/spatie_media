@@ -5,3 +5,5 @@ php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServicePr
 
 
 */
+
+// php artisan media-library:regenerate

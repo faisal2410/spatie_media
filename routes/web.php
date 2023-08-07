@@ -170,7 +170,7 @@ Route::get( 'defining-media-collections', function () {
 
 Route::get( 'add-avatar', function () {
     User::firstWhere( 'email', 'yparker@example.com' )
-        ->addMedia( storage_path( 'demo/avatar1.txt' ) )
+        ->addMedia( storage_path( 'demo/test5.txt' ) )
         ->toMediaCollection( 'avatar' );
 } );
 
@@ -184,6 +184,42 @@ Route::get( 'update-avatar', function () {
 
 Route::get('media-conversions', function () {
     Article::create()
+        ->addMedia(storage_path('demo/himalayas.jpg'))
+        ->toMediaCollection('images');
+});
+
+
+
+// Optimizing images
+
+Route::get('optimizing-images', function () {
+    Article::create()
         ->addMedia(storage_path('demo/library-dublin.jpg'))
         ->toMediaCollection('images');
 });
+
+
+// Customizing paths
+
+Route::get( 'customizing-paths', function () {
+
+    Article::create()
+        ->addMedia( storage_path( 'demo/library-dublin.jpg' ) )
+        ->toMediaCollection( 'images' );
+} );
+
+
+// Responsive images
+
+Route::get( 'generating-responsive-images', function () {
+    Article::create()
+        ->addMedia( storage_path( 'demo/react.jpeg' ) )
+        ->withResponsiveImages()
+        ->toMediaCollection();
+} );
+
+Route::get( 'showing-responsive-images', function () {
+    $media = Article::last()->getFirstMedia();
+
+    return view( 'showing-responsive-images', compact( 'media' ) );
+} );
