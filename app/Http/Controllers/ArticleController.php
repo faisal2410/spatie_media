@@ -21,6 +21,9 @@ class ArticleController extends Controller
         $article
             ->addMediaFromRequest('image')
             ->toMediaCollection();
+        $article
+            ->addMediaFromRequest('image2')
+            ->toMediaCollection();
 
         return back();
     }

@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get( 'add-media-to-library', function () {
     Article::create()
-        ->addMedia( storage_path( 'demo/3.jpg' ) )
+        ->addMedia( storage_path( 'demo/python.jpeg' ) )
         ->toMediaCollection();
 } );
 
@@ -34,11 +34,11 @@ Route::get( 'add-multiple-files-media-to-library', function () {
     $article = Article::create();
 
     $article
-        ->addMedia( storage_path( 'demo/2.jpg' ) )
+        ->addMedia( storage_path( 'demo/php.jpeg' ) )
         ->toMediaCollection();
 
     $article
-        ->addMedia( storage_path( 'demo/talha.jpg' ) )
+        ->addMedia( storage_path( 'demo/react.jpeg' ) )
         ->toMediaCollection();
 } );
 
@@ -101,7 +101,7 @@ Route::get( 'using-collections', function () {
         ->toMediaCollection( 'images' );
 
     $article
-        ->addMedia( storage_path( 'demo/react.jpeg' ) )
+        ->addMedia( storage_path( 'demo/node.png' ) )
         ->toMediaCollection( 'downloads' );
 } );
 
